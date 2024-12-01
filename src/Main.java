@@ -13,12 +13,13 @@ public class Main {
 
         //add your desired fileInput path
 
-        String fileInputPath = "/home/mwas/Pictures/ICONS/pdf.jpeg";
+        String fileInputPath = "/home/mwas/Pictures/ICONS/pdf.tiff";
+//        String fileInputPath = "/home/mwas/Pictures/ICONS/blog.svg";
 
         //add your desired fileOutput path
 
-        String fileOutputPath = "/home/mwas/Pictures/ICONS/Modifiedpdf.jpeg";
-
+        String fileOutputPath = "/home/mwas/Pictures/ICONS/Modifiedpdf.tiff";
+//        String fileOutputPath = "/home/mwas/Pictures/ICONS/Modifiedblog.svg";
         //add your desired prefix
 
         String prefix="2fe";

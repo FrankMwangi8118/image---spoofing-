@@ -1,4 +1,5 @@
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -21,7 +22,7 @@ public class ImageSpoofingService implements ImageSpoofingInterface {
     // creates a hash of the byte representation of the file
 
     public String hashEngine(byte[] hex) throws NoSuchAlgorithmException {
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        MessageDigest digest = MessageDigest.getInstance("SHA-512/256");
         byte[] hashedbytes = digest.digest(hex);
         System.out.println(Arrays.toString(hashedbytes));
         return bytesToHex(hashedbytes);
@@ -29,16 +30,17 @@ public class ImageSpoofingService implements ImageSpoofingInterface {
 
     //adds padding
 
-    public byte[] padding(byte[] imageBytes, String outPath) throws IOException, NoSuchAlgorithmException {
+    public byte[] padding(byte[] imageBytes, String fileOutputPath) throws IOException, NoSuchAlgorithmException {
+        createTheOutputFile(fileOutputPath);
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         byteArrayOutputStream.write(imageBytes);
         int iterations = 0;
         Long startTime = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
         while (true) {
             byteArrayOutputStream.write(0X2FE);
-            Path path = Path.of(outPath);
+            Path path = Path.of(fileOutputPath);
             String hash = hashEngine(Files.readAllBytes(path));
-            try (FileOutputStream fileOutputStream = new FileOutputStream(outPath)) {
+            try (FileOutputStream fileOutputStream = new FileOutputStream(fileOutputPath)) {
                 fileOutputStream.write(byteArrayOutputStream.toByteArray());
             } catch (IOException e) {
                 System.err.println("Error writing to file: " + e.getMessage());
@@ -61,6 +63,15 @@ public class ImageSpoofingService implements ImageSpoofingInterface {
             //  throw new RuntimeException("Padding limit exceeded without finding the match.");
             //}
         }
+    }
+
+    @Override
+    public void createTheOutputFile(String fileOutputPath) throws IOException {
+        File file=new File(fileOutputPath);
+        if (!file.exists()){
+            file.createNewFile();
+        }
+
     }
 
 }

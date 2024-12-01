@@ -8,4 +8,5 @@ public interface ImageSpoofingInterface {
 
     byte[] padding(byte[] imageBytes, String outPath) throws IOException, NoSuchAlgorithmException;
 
+    void createTheOutputFile(String outputFIlePath) throws IOException;
 }
