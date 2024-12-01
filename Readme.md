@@ -10,18 +10,14 @@ Before running the program, ensure you have the following: - **JDK 8 or higher**
 ## File Structure
 ```plaintext ├── ImageSpoofingInterface.java // Interface for the spoofing service ├── ImageSpoofingService.java // Implements the spoofing logic ├── Main.java // Entry point of the program ---
 ## Key Functions
-1. bytesToHex(byte[] bytes) 
-      -Converts a byte array into a hexadecimal String.
-2. hashEngine(byte[] hex) 
-      -Computes the SHA-256 & SHA-512 of the file byte array. -It uses the MessageDigest library from Java Security.
-      -It uses the out of the box messageDigest library from Java Security  
-3.padding(byte[] imageBytes),String fileOutputPath)
-      -Repeatedly appends a padding byte to the image array till a condition is met.
-      -Saves/Writes the byte to a file ie modifiedFile.JPEG
-      -Computes the hash of the byte array of the modifiedFile after each modification ie after each padding since we wrap it in a while loop.
-      -The while loop breaks when the Hash meets the condition ...in these case when it starta with the defined prefix. "fe........"
-         . outputs the hash where the match was found.
-         . Number of iterations.
-         . Time taken to fin the match
-      
-![img](images/paths.png)
+### `bytesToHex(byte[] bytes)`
+- Converts a byte array into a hexadecimal string.
+### `hashEngine(byte[] hex)`
+- Computes the SHA-256 hash of the file's byte array. - Uses Java's `MessageDigest` library for 
+cryptographic hashing.
+### `padding(byte[] imageBytes, String fileOutputPath)`
+- Repeatedly appends a padding byte (e.g., 0x2FE) to the image byte array until a condition is met. - 
+Saves the modified byte array to a file (e.g., `ModifiedFile.jpeg`). - Computes the hash of the 
+modified byte array after each iteration. - Logs:
+  - The hash when the condition is met. - The number of iterations taken. - The time required to find 
+  the match.
