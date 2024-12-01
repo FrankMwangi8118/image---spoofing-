@@ -19,5 +19,7 @@ cryptographic hashing.
 - Repeatedly appends a padding byte (e.g., 0x2FE) to the image byte array until a condition is met. - 
 Saves the modified byte array to a file (e.g., `ModifiedFile.jpeg`). - Computes the hash of the 
 modified byte array after each iteration. - Logs:
-  - The hash when the condition is met. - The number of iterations taken. - The time required to find 
-  the match.
+  - The hash when the condition is met. 
+  - The number of iterations taken. 
+  - The time required to find 
+   the match.
