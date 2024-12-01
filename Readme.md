@@ -8,9 +8,9 @@ process details, including iterations and time taken. ---
 ## Prerequisites
 Before running the program, ensure you have the following: - **JDK 8 or higher** installed. - **Basic knowledge of file paths** in your operating system. ---
 ## File Structure
-- ├── ImageSpoofingInterface.java // Interface for the spoofing service 
-  ├── ImageSpoofingService.java // Implements the spoofing logic 
-  ├── Main.java // Entry point of the program 
+- -ImageSpoofingInterface.java // Interface for the spoofing service 
+  -mageSpoofingService.java // Implements the spoofing logic 
+  -Main.java // Entry point of the program 
 ## Key Functions
 ### `bytesToHex(byte[] bytes)`
 - Converts a byte array into a hexadecimal string.
