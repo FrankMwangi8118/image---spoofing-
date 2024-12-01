@@ -1,8 +1,11 @@
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+
 public interface ImageSpoofingInterface {
     String bytesToHex(byte[] bytes);
 
-    String hashEngine(byte[] hex);
+    String hashEngine(byte[] hex) throws NoSuchAlgorithmException;
 
-    String padding(byte[] imageBytes, String outPath);
+    byte[] padding(byte[] imageBytes, String outPath) throws IOException, NoSuchAlgorithmException;
 
 }
