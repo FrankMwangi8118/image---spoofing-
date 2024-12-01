@@ -57,7 +57,6 @@ public class ImageSpoofingService implements ImageSpoofingInterface {
                 System.out.println("Searching.");
             }
 
-
             //if (byteArrayOutputStream.size() > imageBytes.length + 1000) {
             //  throw new RuntimeException("Padding limit exceeded without finding the match.");
             //}
