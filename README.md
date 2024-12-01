@@ -70,7 +70,7 @@ data in the file without altering the actual image content.
 
 ### Padding Strategy:
 
-- **Why Padding?**Typically, padding is done at the end of the structure to fill it up with data, with the padding
+- **Why Padding?** Typically, padding is done at the end of the structure to fill it up with data, with the padding
   usually
   consisting of 1 bits, blank characters or null characters , ensuring no visual change ie the file is identical to the
   human eye when opened in image viewers .
