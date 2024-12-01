@@ -24,10 +24,10 @@ data in the file without altering the actual image content.
 
 ### Working file-formats:
 
--**png**
--**jpeg/jpg**
--**giff**
--**tiff**
+- **png**
+- **jpeg/jpg**
+- **giff**
+- **tiff**
 
 ### Hashing:
 
