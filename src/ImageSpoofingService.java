@@ -51,7 +51,7 @@ public class ImageSpoofingService implements ImageSpoofingInterface {
                 System.out.println("Match found: " + hash);
                 System.out.println("found in " + iterations + " iterations");
                 Long closeTime = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
-                System.out.println("Time taken " + (closeTime - startTime));
+                System.out.println("Time taken " + (closeTime - startTime)+" seconds");
                 return Files.readAllBytes(path);
             } else {
                 System.out.println("Searching.");

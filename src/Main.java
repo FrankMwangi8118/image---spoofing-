@@ -11,21 +11,25 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
 
-        //add your file input path
+        //add your desired fileInput path
 
-        String fileInPath = "/home/mwas/Pictures/ICONS/pdf.jpeg";
+        String fileInputPath = "/home/mwas/Pictures/ICONS/pdf.jpeg";
 
-        //add your file output path
+        //add your desired fileOutput path
 
-        String fileOutPath = "/home/mwas/Pictures/ICONS/Modifiedpdf.jpeg";
+        String fileOutputPath = "/home/mwas/Pictures/ICONS/Modifiedpdf.jpeg";
+
+        //add your desired prefix
+
+        String prefix="2fe";
 
         ImageSpoofingService imageSpoofingService = new ImageSpoofingService();
 
-        byte[] imageBytes = Files.readAllBytes(Paths.get(fileInPath));
+        byte[] imageBytes = Files.readAllBytes(Paths.get(fileInputPath));
         System.out.println(imageBytes.length);
 
         System.out.println(imageSpoofingService.hashEngine(imageBytes));
-        byte[] paddedImgByteInHex = imageSpoofingService.padding(imageBytes, fileOutPath);
+        byte[] paddedImgByteInHex = imageSpoofingService.padding(imageBytes, fileOutputPath);
 
     }
 }
