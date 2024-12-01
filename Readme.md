@@ -28,9 +28,17 @@ modified byte array after each iteration. - Logs:
   - The number of iterations taken. 
   - The time required to find 
     the match.
-  ![Image](images/output.png)
-  
+## Loggings
+  - Each computed byte array and its hash.
+  - The number of iterations performed until the conditions are meet.
+  - Total time taken to achieve the desired hash conditions ie start with the prefix.
+    ![Image](images/output.png)
 ## Modify Parameters
 - Update the fileInputPath and fileOutputPath variables in the Main class to specify your desired input file & output file location .
 - Adjust the condition ie update the prefix  to meet desired requirements.
 ![Image](images/paths.png)
+
+## NB: NOTES
+- Ensure:
+  - File inputfile exist and the fileinputpath is correct.
+  - Ensure the outputFilepath has write permissions.
