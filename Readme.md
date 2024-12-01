@@ -28,3 +28,4 @@ modified byte array after each iteration. - Logs:
   - The number of iterations taken. 
   - The time required to find 
     the match.
+![Image](images/paths.png)
