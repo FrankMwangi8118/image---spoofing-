@@ -8,9 +8,12 @@ process details, including iterations and time taken. ---
 ## Prerequisites
 Before running the program, ensure you have the following: - **JDK 8 or higher** installed. - **Basic knowledge of file paths** in your operating system. ---
 ## File Structure
--├── ImageSpoofingInterface.java  // Interface for the spoofing service
--├── ImageSpoofingService.java    // Implementation of the spoofing service
--├── Main.java                    // Main class to run the program 
+
+```plaintext
+├── ImageSpoofingInterface.java      // Interface for the spoofing service
+├── ImageSpoofingService.java        // Service that implements the spoofing logic
+├── Main.java                        // Main class to run the program
+```
 ## Key Functions
 ### `bytesToHex(byte[] bytes)`
 - Converts a byte array into a hexadecimal string.
@@ -21,7 +24,7 @@ cryptographic hashing.
 - Repeatedly appends a padding byte (e.g., 0x2FE) to the image byte array until a condition is met. - 
 Saves the modified byte array to a file (e.g., `ModifiedFile.jpeg`). - Computes the hash of the 
 modified byte array after each iteration. - Logs:
-  - The hash when the condition is met. 
+  - The hash when the condition is meet. 
   - The number of iterations taken. 
   - The time required to find 
-   the match.
+    the match.
